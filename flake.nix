@@ -5,16 +5,16 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     beads = {
-      url = "github:steveyegge/beads/v0.55.4";
+      url = "github:haglobah/beads";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, beads }:
+  outputs = { self, nixpkgs, flake-utils, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        beads = self.inputs.beads.packages.${system};
+        beads = self.inputs.beads.packages.${system}.default;
       in
       {
         packages = {
