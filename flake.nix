@@ -22,7 +22,7 @@
             pname = "gt";
             version = "0.6.0";
             src = ./.;
-            vendorHash = "sha256-ripY9vrYgVW8bngAyMLh0LkU/Xx1UUaLgmAA7/EmWQU=";
+            vendorHash = "sha256-XWv/slFm796AO928eqzVHms0uUX4ZMJk0I4mZz+kp54=";
 
             subPackages = [ "cmd/gt" ];
 
